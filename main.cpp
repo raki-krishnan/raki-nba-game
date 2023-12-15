@@ -60,14 +60,14 @@ vector<SmallForward> small_forwards, vector<PowerForward> power_forwards, vector
     int credits = 16;
     srand((unsigned int)time(NULL));
 
-    PointGuard pg_computer = point_guards.at(rand() % point_guards.size());
+    PointGuard pg_computer = point_guards.at(size_t(rand()) % point_guards.size());
     computerTeam.set_point_guard(pg_computer); //The point guard the computer takes is random
     credits -= pg_computer.get_value();
 
 
     //set the shooting guard
-    ShootingGuard sg_computer = shooting_guards.at(rand() % shooting_guards.size());
-    for(int i = 0; i < shooting_guards.size(); i++){
+    ShootingGuard sg_computer = shooting_guards.at(size_t(rand()) % shooting_guards.size());
+    for(size_t i = 0; i < shooting_guards.size(); i++){
         if(lessValuable_sg(sg_computer, shooting_guards.at(i), pg_computer)){
             sg_computer = shooting_guards.at(i);
         }
@@ -76,8 +76,8 @@ vector<SmallForward> small_forwards, vector<PowerForward> power_forwards, vector
     credits -= sg_computer.get_value();
 
     //set the small forward
-    SmallForward sf_computer = small_forwards.at(rand() % small_forwards.size());
-    for (int i = 0; i < small_forwards.size(); ++i){
+    SmallForward sf_computer = small_forwards.at(size_t(rand()) % small_forwards.size());
+    for (size_t i = 0; i < small_forwards.size(); ++i){
         if(lessValuable_sf(sf_computer, small_forwards.at(i), pg_computer, sg_computer)){
             sf_computer = small_forwards.at(i);
         }
@@ -87,8 +87,8 @@ vector<SmallForward> small_forwards, vector<PowerForward> power_forwards, vector
     credits -= sf_computer.get_value();
 
     //set the power forward
-    PowerForward pf_computer = power_forwards.at(rand() % power_forwards.size());
-    for (int i = 0; i < power_forwards.size(); ++i){
+    PowerForward pf_computer = power_forwards.at(size_t(rand()) % power_forwards.size());
+    for (size_t i = 0; i < power_forwards.size(); ++i){
         if(lessValuable_pf(pf_computer, power_forwards.at(i), pg_computer, sg_computer, sf_computer)){
             pf_computer = power_forwards.at(i);
         }
@@ -101,7 +101,7 @@ vector<SmallForward> small_forwards, vector<PowerForward> power_forwards, vector
         c_computer = centers.at(centers.size() - 1);
     }
     else{
-        for (int i = 0; i < credits; ++i){
+        for (size_t i = 0; i < size_t(credits); ++i){
             if (centers.at(i).get_value() == credits){
                 c_computer = centers.at(i);
             }
@@ -148,7 +148,7 @@ PointGuard generate_point_guard_5(){
     point_guards.push_back(bob_cousy);
 
 
-    return point_guards.at(random_number_generator(point_guards.size()));
+    return point_guards.at(size_t(random_number_generator(int(point_guards.size()))));
 }
 
 PointGuard generate_point_guard_4(){
@@ -172,7 +172,7 @@ PointGuard generate_point_guard_4(){
     point_guards.push_back(damian_lillard);
     point_guards.push_back(gary_payton);
     
-    return point_guards.at(random_number_generator(point_guards.size()));
+   return point_guards.at(size_t(random_number_generator(int(point_guards.size()))));
 }
 
 PointGuard generate_point_guard_3(){
@@ -195,7 +195,7 @@ PointGuard generate_point_guard_3(){
     point_guards.push_back(steve_francis);
     point_guards.push_back(shai_ga);
     
-    return point_guards.at(random_number_generator(point_guards.size()));
+    return point_guards.at(size_t(random_number_generator(int(point_guards.size()))));
 }
 
 PointGuard generate_point_guard_2(){
@@ -220,7 +220,7 @@ PointGuard generate_point_guard_2(){
     point_guards.push_back(kemba_walker);
     point_guards.push_back(kyle_lowry);
 
-    return point_guards.at(random_number_generator(point_guards.size()));
+    return point_guards.at(size_t(random_number_generator(int(point_guards.size()))));
 }
 
 PointGuard generate_point_guard_1(){
@@ -242,7 +242,7 @@ PointGuard generate_point_guard_1(){
     point_guards.push_back(cade_cunningham);
     point_guards.push_back(lou_williams);
 
-    return point_guards.at(random_number_generator(point_guards.size()));
+    return point_guards.at(size_t(random_number_generator(int(point_guards.size()))));
 }
 
 
@@ -265,7 +265,7 @@ ShootingGuard generate_shooting_guard_5(){
     shooting_guards.push_back(james_harden);
     shooting_guards.push_back(tracy_mcgrady);
 
-    return shooting_guards.at(random_number_generator(shooting_guards.size()));
+    return shooting_guards.at(size_t(random_number_generator(int(shooting_guards.size()))));
 }
 ShootingGuard generate_shooting_guard_4(){
     ShootingGuard george_gervin("George Gervin", 99, "SAS", 4, "shooting guard");
@@ -286,7 +286,7 @@ ShootingGuard generate_shooting_guard_4(){
     shooting_guards.push_back(earl_monroe);
     shooting_guards.push_back(devin_booker);
     
-    return shooting_guards.at(random_number_generator(shooting_guards.size()));
+    return shooting_guards.at(size_t(random_number_generator(int(shooting_guards.size()))));
 }
 
 ShootingGuard generate_shooting_guard_3(){
@@ -309,7 +309,7 @@ ShootingGuard generate_shooting_guard_3(){
     shooting_guards.push_back(jaylen_brown);
     shooting_guards.push_back(anthony_edwards);
 
-    return shooting_guards.at(random_number_generator(shooting_guards.size()));
+    return shooting_guards.at(size_t(random_number_generator(int(shooting_guards.size()))));
 }
 
 
@@ -332,7 +332,7 @@ ShootingGuard generate_shooting_guard_2(){
     shooting_guards.push_back(tyrese_maxey);
     shooting_guards.push_back(jalen_green);
 
-    return shooting_guards.at(random_number_generator(shooting_guards.size()));
+    return shooting_guards.at(size_t(random_number_generator(int(shooting_guards.size()))));
 
 }
 ShootingGuard generate_shooting_guard_1(){
@@ -356,7 +356,7 @@ ShootingGuard generate_shooting_guard_1(){
     shooting_guards.push_back(alex_caruso);
     shooting_guards.push_back(kelly_oubre);
 
-    return shooting_guards.at(random_number_generator(shooting_guards.size()));
+    return shooting_guards.at(size_t(random_number_generator(int(shooting_guards.size()))));
 }
 
 SmallForward generate_small_forward_5(){
@@ -378,7 +378,7 @@ SmallForward generate_small_forward_5(){
     small_forwards.push_back(elgin_baylor);
     small_forwards.push_back(kawhi_leonard);
 
-    return small_forwards.at(random_number_generator(small_forwards.size()));
+    return small_forwards.at(size_t(random_number_generator(int(small_forwards.size()))));
 }
 SmallForward generate_small_forward_4(){
     SmallForward paul_pierce("Paul Pierce", 99, "BOS", 4, "small forward");
@@ -402,7 +402,7 @@ SmallForward generate_small_forward_4(){
     small_forwards.push_back(jayson_tatum);
     small_forwards.push_back(jimmy_butler);
 
-    return small_forwards.at(random_number_generator(small_forwards.size()));
+    return small_forwards.at(size_t(random_number_generator(int(small_forwards.size()))));
 }
 SmallForward generate_small_forward_3(){
     SmallForward brandon_ingram("Brandon Ingram", 25, "NOP", 3, "small forward");
@@ -420,7 +420,7 @@ SmallForward generate_small_forward_3(){
     small_forwards.push_back(gerald_wallace);
     small_forwards.push_back(shane_battier);
 
-    return small_forwards.at(random_number_generator(small_forwards.size()));
+    return small_forwards.at(size_t(random_number_generator(int(small_forwards.size()))));
 }
 SmallForward generate_small_forward_2(){
     SmallForward andrew_wiggins("Andrew Wiggins", 28, "GSW", 2, "small forward");
@@ -440,7 +440,7 @@ SmallForward generate_small_forward_2(){
     small_forwards.push_back(og_anunoby);
     small_forwards.push_back(keldon_johnson);
 
-    return small_forwards.at(random_number_generator(small_forwards.size()));
+    return small_forwards.at(size_t(random_number_generator(int(small_forwards.size()))));
 }
 SmallForward generate_small_forward_1(){
     
@@ -461,7 +461,7 @@ SmallForward generate_small_forward_1(){
     small_forwards.push_back(saddiq_bey);
     small_forwards.push_back(keegan_murray);
 
-    return small_forwards.at(random_number_generator(small_forwards.size()));
+    return small_forwards.at(size_t(random_number_generator(int(small_forwards.size()))));
 }
 
 PowerForward generate_power_forward_5(){
@@ -482,7 +482,7 @@ PowerForward generate_power_forward_5(){
     power_forwards.push_back(elvin_hayes);
     power_forwards.push_back(giannis_antetokounmpo);
 
-    return power_forwards.at(random_number_generator(power_forwards.size()));
+    return power_forwards.at(size_t(random_number_generator(int(power_forwards.size()))));
 }
 
 PowerForward generate_power_forward_4(){
@@ -503,7 +503,7 @@ PowerForward generate_power_forward_4(){
     power_forwards.push_back(chris_webber);
     power_forwards.push_back(horace_grant);
 
-    return power_forwards.at(random_number_generator(power_forwards.size()));
+    return power_forwards.at(size_t(random_number_generator(int(power_forwards.size()))));
 }
 
 PowerForward generate_power_forward_3(){
@@ -530,7 +530,7 @@ PowerForward generate_power_forward_3(){
     power_forwards.push_back(lauri_markkanen);
     power_forwards.push_back(jaren_jackson_jr);
 
-    return power_forwards.at(random_number_generator(power_forwards.size()));
+    return power_forwards.at(size_t(random_number_generator(int(power_forwards.size()))));
 }
 
 PowerForward generate_power_forward_2(){
@@ -553,7 +553,7 @@ PowerForward generate_power_forward_2(){
     power_forwards.push_back(bojan_bogdanovic);
     power_forwards.push_back(kristaps_porzingis);
 
-    return power_forwards.at(random_number_generator(power_forwards.size()));
+    return power_forwards.at(size_t(random_number_generator(int(power_forwards.size()))));
 }
 
 PowerForward generate_power_forward_1(){
@@ -574,7 +574,7 @@ PowerForward generate_power_forward_1(){
     power_forwards.push_back(jabari_smith_jr);
     power_forwards.push_back(marvin_bagley);
 
-    return power_forwards.at(random_number_generator(power_forwards.size()));
+    return power_forwards.at(size_t(random_number_generator(int(power_forwards.size()))));
 }
 
 
@@ -598,7 +598,7 @@ Center generate_center_5(){
     centers.push_back(david_robinson);
     centers.push_back(yao_ming);
 
-    return centers.at(random_number_generator(centers.size()));
+    return centers.at(size_t(random_number_generator(int(centers.size()))));
 }
 
 Center generate_center_4(){
@@ -621,7 +621,7 @@ Center generate_center_4(){
     centers.push_back(dikembe_mutumbo);
     centers.push_back(anthony_davis);
 
-    return centers.at(random_number_generator(centers.size()));
+    return centers.at(size_t(random_number_generator(int(centers.size()))));
 }
 Center generate_center_3(){
     Center dwight_howard("Dwight Howard", 37, "ORL", 3, "center");
@@ -643,7 +643,7 @@ Center generate_center_3(){
     centers.push_back(bam_adebayo);
     centers.push_back(steven_adams);
 
-    return centers.at(random_number_generator(centers.size()));
+    return centers.at(size_t(random_number_generator(int(centers.size()))));
 }
 
 Center generate_center_2(){
@@ -666,7 +666,7 @@ Center generate_center_2(){
     centers.push_back(al_horford);
     centers.push_back(jonas_valanciunas);
 
-    return centers.at(random_number_generator(centers.size()));
+    return centers.at(size_t(random_number_generator(int(centers.size()))));
 }
 
 Center generate_center_1(){
@@ -689,7 +689,7 @@ Center generate_center_1(){
     centers.push_back(bol_bol);
     centers.push_back(kevon_looney);
 
-    return centers.at(random_number_generator(centers.size()));
+    return centers.at(size_t(random_number_generator(int(centers.size()))));
 }
 
 
@@ -800,7 +800,7 @@ int main(){
             valid_choice = true;
         }
     }
-    sg_decision = (sg_list.at(choice - 1));
+    sg_decision = (sg_list.at(size_t(choice - 1)));
     cout << "You chose:  " << sg_decision.get_name() << "!" << endl;
     credits -= sg_decision.get_value();
     userTeam.set_shooting_guard(sg_decision);
@@ -844,7 +844,7 @@ int main(){
         //if they choose the 5 level player 3 times in a row, they will only have 1 credit left
         if(valid_choice){
             if(credits - choice < 2){
-                cout << "You do not have enough credits to select " << sf_list.at(choice - 1).get_name();
+                cout << "You do not have enough credits to select " << sf_list.at(size_t(choice - 1)).get_name();
                 cout << ". Please choose someone else: " << endl;
                 valid_choice = false;
                 sf_chosen = false;
@@ -854,7 +854,7 @@ int main(){
             }
         }
    }
-    sf_decision = (sf_list.at(choice - 1));
+    sf_decision = (sf_list.at(size_t(choice - 1)));
     cout << "You chose: " << sf_decision.get_name() << "!" << endl;
     credits -= sf_decision.get_value();
     userTeam.set_small_forward(sf_decision);
@@ -893,14 +893,14 @@ int main(){
                 pf_chosen = true;
             }
             else{
-                cout << "You do not have enough credits to select " << pf_list.at(choice - 1).get_name();
+                cout << "You do not have enough credits to select " << pf_list.at(size_t(choice - 1)).get_name();
                 cout << ". Please choose someone else: " << endl;
                 pf_chosen = false;
                 valid_choice = false;
             }
         }
    }
-        pf_decision = pf_list.at(choice - 1);
+        pf_decision = pf_list.at(size_t(choice - 1));
         cout << "You chose: " << pf_decision.get_name() << "!" << endl;
         credits -= pf_decision.get_value();
         choice = 0;
@@ -942,14 +942,14 @@ int main(){
                 center_chosen = true;
             }
             else{
-                cout << "You do not have enough credits to select " << c_list.at(choice - 1).get_name();
+                cout << "You do not have enough credits to select " << c_list.at(size_t(choice - 1)).get_name();
                 cout << ". Please choose someone else: " << endl;
                 center_chosen = false;
                 valid_choice = false;
             }
         }
     }
-    c_decision = c_list.at(choice - 1);
+    c_decision = c_list.at(size_t(choice - 1));
     cout << "You chose: " << c_decision.get_name() << "!" << endl;
     credits -= c_decision.get_value();
     userTeam.set_center(c_decision);

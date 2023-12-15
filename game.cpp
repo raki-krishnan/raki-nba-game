@@ -43,49 +43,49 @@ void Game::print_teams_side_by_side(){
     
     //print the point guards
     cout << userTeam.get_point_guard().get_name();
-    length = 25 - userTeam.get_point_guard().get_name().size();
+    length = 25 - int(userTeam.get_point_guard().get_name().size());
     print_spaces(length);
     cout << computerTeam.get_point_guard().get_name() << endl;
 
     //print the shooting guards
     cout << userTeam.get_shooting_guard().get_name();
-    length = 25 - userTeam.get_shooting_guard().get_name().size();
+    length = 25 - int(userTeam.get_shooting_guard().get_name().size());
     print_spaces(length);
     cout << computerTeam.get_shooting_guard().get_name() << endl;
 
     //print the small forwards
     cout << userTeam.get_small_forward().get_name();
-    length = 25 - userTeam.get_small_forward().get_name().size();
+    length = 25 - int(userTeam.get_small_forward().get_name().size());
     print_spaces(length);
     cout << computerTeam.get_small_forward().get_name() << endl;
 
     //print the power forwards
     cout << userTeam.get_power_forward().get_name();
-    length = 25 - userTeam.get_power_forward().get_name().size();
+    length = 25 - int(userTeam.get_power_forward().get_name().size());
     print_spaces(length);
     cout << computerTeam.get_power_forward().get_name() << endl;
 
     //print the centers
     cout << userTeam.get_center().get_name();
-    length = 25 - userTeam.get_center().get_name().size();
+    length = 25 - int(userTeam.get_center().get_name().size());
     print_spaces(length);
     cout << computerTeam.get_center().get_name() << endl;
 
 }
 
 void Game::check_duos(vector<string> names, int &team_points){
-    for (int i = 0; i < names.size(); ++i){
+    for (size_t i = 0; i < names.size(); ++i){
 
         //check for MJ-pippen duo
         if (names.at(i) == "Michael Jordan"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Scottie Pippen"){
                     team_points += 3;
                 }
             }
         }
         if (names.at(i) == "Scottie Pippen"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Michael Jordan"){
                     team_points += 3;
                 }
@@ -94,14 +94,14 @@ void Game::check_duos(vector<string> names, int &team_points){
 
         //check for Lebron-Wade duo
         if (names.at(i) == "Lebron James"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Dwayne Wade"){
                     team_points += 3;
                 }
             }
         }
         if (names.at(i) == "Dwayne Wade"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Lebron James"){
                     team_points += 3;
                 }
@@ -110,14 +110,14 @@ void Game::check_duos(vector<string> names, int &team_points){
 
         //check for kobe-shaq duo
         if (names.at(i) == "Kobe Bryant"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Shaquielle O'neal"){
                     team_points += 3;
                 }
             }
         }
         if (names.at(i) == "Shaquielle O'neal"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Kobe Bryant"){
                     team_points += 3;
                 }
@@ -125,14 +125,14 @@ void Game::check_duos(vector<string> names, int &team_points){
         }
         //check for steph-klay duo
         if (names.at(i) == "Steph Curry"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Klay Thompson"){
                     team_points += 3;
                 }
             }
         }
         if (names.at(i) == "Klay Thompson"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Steph Curry"){
                     team_points += 3;
                 }
@@ -141,14 +141,14 @@ void Game::check_duos(vector<string> names, int &team_points){
 
         //check for magic-kareem duo
         if (names.at(i) == "Magic Johnson"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Kareem Abdul-Jabbar"){
                     team_points += 3;
                 }
             }
         }
         if (names.at(i) == "Kareem Abdul-Jabbar"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Magic Johnson"){
                     team_points += 3;
                 }
@@ -158,14 +158,14 @@ void Game::check_duos(vector<string> names, int &team_points){
         //this is not quite a duo, but if MJ and Lebron are on the same team, its probably over for the other team
                 //check for magic-kareem duo
         if (names.at(i) == "Michael Jordan"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Lebron James"){
                     team_points += 5;
                 }
             }
         }
         if (names.at(i) == "Lebron James"){
-            for (int j = i + 1; j < names.size(); ++ j){
+            for (size_t j = i + 1; j < names.size(); ++ j){
                 if (names.at(i) == "Michael Jordan"){
                     team_points += 3;
                 }
@@ -193,8 +193,8 @@ int Game::calculate_points(Team team){
     bool two_match = false;
     bool three_match = false;
     //this double for loop evaluates points based on if players are on the same NBA team
-    for (int i = 0 ; i < abbrevs.size(); ++i){
-        for (int j = i + 1; j < abbrevs.size(); ++j){
+    for (size_t i = 0 ; i < abbrevs.size(); ++i){
+        for (size_t j = i + 1; j < abbrevs.size(); ++j){
             //we have matched two
             if(abbrevs.at(i) == abbrevs.at(j) && three_match){
                 points += 2;
@@ -231,7 +231,7 @@ int Game::calculate_points(Team team){
     names.push_back(name3);
     names.push_back(name4);
     names.push_back(name5);
-    for (int i = 0; i < names.size(); ++i){
+    for (size_t i = 0; i < names.size(); ++i){
         if (names.at(i) == "Lebron James"){
             points += 2;
         }
@@ -283,7 +283,7 @@ int Game::calculate_points(Team team){
     ages.push_back(age5);
     //if the player is retired, revert their age to from 99 to 30; 
     //this sets up the average age calculation
-    for (int i = 0; i < ages.size(); ++i){
+    for (size_t i = 0; i < ages.size(); ++i){
         if(ages.at(i) == 99){
             ages.at(i) = 30;
         }
@@ -316,7 +316,7 @@ int Game::calculate_points(Team team){
     int value1counter = 0;
     int value5counter = 0;
     //check for multiple players value 1 or value 5, unbalanced teams
-    for (int i = 0; i < values.size(); i++){
+    for (size_t i = 0; i < values.size(); i++){
         if (values.at(i) == 1){
             value1counter++;
         }
