@@ -756,7 +756,7 @@ int main(){
         cout << "(" << level_2_pg.get_value() << ") " << level_2_pg.get_name() << endl;
         cout << "(" << level_1_pg.get_value() << ") " << level_1_pg.get_name() << endl;
         cout << endl;
-        cin >> choice; if(choice)
+        cin >> choice; 
         if (is_valid_choice(choice)){
             valid_choice = true;
         }
