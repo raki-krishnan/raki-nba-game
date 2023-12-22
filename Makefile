@@ -1,6 +1,7 @@
 CC = g++
 BIN = nba
 SRCS = $(shell find . -name "*.cpp")
+HEADERS = $(shell find . -name "*.h")
 CXXFLAGS = -std=c++17 -Wconversion -Wall -Werror -Wextra -pedantic
 
 .PHONY: all
@@ -14,5 +15,5 @@ clean:
 run: $(BIN)
 	./$(BIN)
 
-$(BIN): $(SRCS)
-	$(CC) $(CXXFLAGS) -o $@ $^
+$(BIN): $(SRCS) $(HEADERS)
+	$(CC) $(CXXFLAGS) -o $@ $(SRCS)
