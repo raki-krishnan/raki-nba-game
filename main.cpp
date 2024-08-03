@@ -14,7 +14,7 @@ void print_instructions(){
     " and beat the randomized computer team." << endl;
     cout << "When you are asked to choose a player, " << 
     "please type in the number next to their name." << endl;
-    cout << "The number next to the player's name is also their value. Each player has a value worth 1-5" << endl;
+    cout << "The number next to the player's name is also their value. Each player has a value worth 1-5." << endl;
     cout << "You start with 16 credits, and each time you choose a player, ";
     cout << "the number of credits you pay is listed next to their name." << endl;
     cout << "Good luck and choose wisely!" << endl;
@@ -133,9 +133,9 @@ PointGuard generate_point_guard_5(){
     PointGuard jerry_west("Jerry West", 99, "LAL", 5, "point guard");
     PointGuard oscar_robertson("Oscar Robertson", 99, "MIL", 5, "point guard");
     PointGuard isaiah_thomas("Isaiah Thomas(older one)", 99, "DET", 5, "point guard");
-    PointGuard chris_paul("Chris Paul", 38, "PHX", 5, "point guard");
+    PointGuard kyrie_irving("Kyrie Irving", 31, "DAL", 4, "point guard");
     PointGuard allen_iverson("Allen Iverson", 99, "PHI", 5, "point guard");
-    PointGuard bob_cousy("Bob Cousy", 99, "BOS", 5, "point guard");
+    
 
     vector<PointGuard> point_guards;
     point_guards.push_back(steph_curry); //point_guards.at(0)
@@ -143,9 +143,9 @@ PointGuard generate_point_guard_5(){
     point_guards.push_back(jerry_west);
     point_guards.push_back(oscar_robertson);
     point_guards.push_back(isaiah_thomas);
-    point_guards.push_back(chris_paul);
+    point_guards.push_back(kyrie_irving);
     point_guards.push_back(allen_iverson);
-    point_guards.push_back(bob_cousy);
+    
 
 
     return point_guards.at(size_t(random_number_generator(int(point_guards.size()))));
@@ -153,24 +153,27 @@ PointGuard generate_point_guard_5(){
 
 PointGuard generate_point_guard_4(){
     PointGuard russell_westbrook("Russell Westbrook", 34, "LAC", 4, "point guard");
-    PointGuard kyrie_irving("Kyrie Irving", 31, "DAL", 4, "point guard");
+    PointGuard chris_paul("Chris Paul", 38, "PHX", 5, "point guard");
     PointGuard john_stockton("John Stockton", 99, "UTA", 4, "point guard");
     PointGuard steve_nash("Steve Nash", 99, "PHX", 4, "point guard");
     PointGuard rajon_rondo("Rajon Rondo", 99, "BOS", 4, "point guard");
     PointGuard jason_kidd("Jason Kidd", 99, "DAL", 4, "point guard");
     PointGuard damian_lillard("Damian Lillard", 32, "POR", 4, "point guard");
     PointGuard gary_payton("Gary Payton", 99, "PKC", 4, "point guard");
+    PointGuard bob_cousy("Bob Cousy", 99, "BOS", 5, "point guard");
     
 
     vector<PointGuard> point_guards;
     point_guards.push_back(russell_westbrook);
-    point_guards.push_back(kyrie_irving);
+    point_guards.push_back(chris_paul);
+    
     point_guards.push_back(john_stockton);
     point_guards.push_back(steve_nash);
     point_guards.push_back(rajon_rondo);
     point_guards.push_back(jason_kidd);
     point_guards.push_back(damian_lillard);
     point_guards.push_back(gary_payton);
+    point_guards.push_back(bob_cousy);
     
    return point_guards.at(size_t(random_number_generator(int(point_guards.size()))));
 }
@@ -517,6 +520,7 @@ PowerForward generate_power_forward_3(){
     PowerForward pascal_siakam("Pascal Siakam", 29, "TOR", 3, "power forward");
     PowerForward lauri_markkanen("Lauri Markkanen", 25, "UTA", 3, "power forward");
     PowerForward jaren_jackson_jr("Jaren Jackson Jr", 23, "MEM", 3, "power forward");
+    PowerForward victor_wembanyama("Victor Wembanyama", 21, "SAS", 3, "power forward");
 
     vector<PowerForward> power_forwards;
     power_forwards.push_back(zach_randolph);
@@ -529,6 +533,7 @@ PowerForward generate_power_forward_3(){
     power_forwards.push_back(pascal_siakam);
     power_forwards.push_back(lauri_markkanen);
     power_forwards.push_back(jaren_jackson_jr);
+    power_forwards.push_back(victor_wembanyama);
 
     return power_forwards.at(size_t(random_number_generator(int(power_forwards.size()))));
 }
@@ -587,6 +592,8 @@ Center generate_center_5(){
     Center moses_malone("Moses Malone", 99, "HOU", 5, "center");
     Center david_robinson("David Robinson", 99, "SAS", 5, "center");
     Center yao_ming("Yao Ming", 99, "HOU", 5, "center");
+    Center nikola_jokic("Nikola Jokic", 28, "DEN", 4, "center");
+
 
     vector<Center> centers;
     centers.push_back(shaq);
@@ -597,6 +604,7 @@ Center generate_center_5(){
     centers.push_back(moses_malone);
     centers.push_back(david_robinson);
     centers.push_back(yao_ming);
+    centers.push_back(nikola_jokic);
 
     return centers.at(size_t(random_number_generator(int(centers.size()))));
 }
@@ -605,21 +613,21 @@ Center generate_center_4(){
     Center patrick_ewing("Patrick Ewing", 99, "NYK", 4, "center");
     Center george_mikan("George Mikan", 99, "LAL", 4, "center");
     Center joel_embiid("Joel Embiid", 29, "PHI", 4, "center");
-    Center nikola_jokic("Nikola Jokic", 28, "DEN", 4, "center");
     Center wes_unseld("Wes Unseld", 99, "WAS", 4, "center");
     Center alonzo_mourning("Alonzo Mourning", 99, "MIA", 4, "center");
     Center dikembe_mutumbo("Dikembe Mutumbo", 99, "ATL", 4, "center");
     Center anthony_davis("Anthony Davis", 30, "LAL", 4, "center");
+    Center pau_gasol("Pau Gasol", 99, "LAL", 3, "center");
 
     vector<Center> centers;
     centers.push_back(patrick_ewing);
     centers.push_back(george_mikan);
     centers.push_back(joel_embiid);
-    centers.push_back(nikola_jokic);
     centers.push_back(wes_unseld);
     centers.push_back(alonzo_mourning);
     centers.push_back(dikembe_mutumbo);
     centers.push_back(anthony_davis);
+    centers.push_back(pau_gasol);
 
     return centers.at(size_t(random_number_generator(int(centers.size()))));
 }
@@ -627,7 +635,6 @@ Center generate_center_3(){
     Center dwight_howard("Dwight Howard", 37, "ORL", 3, "center");
     Center manute_bol("Manute Bol", 99, "WAS", 3, "center");
     Center rudy_gobert("Rudy Gobert", 30, "MIN", 3, "center");
-    Center pau_gasol("Pau Gasol", 99, "LAL", 3, "center");
     Center joakim_noah("Joakim Noah", 99, "CHI", 3, "center");
     Center karl_anthony_towns("Karl Anthony Towns", 27, "MIN", 3, "center");
     Center bam_adebayo("Bam Adebayo", 25, "MIA", 3, "center");
@@ -637,7 +644,7 @@ Center generate_center_3(){
     centers.push_back(dwight_howard);
     centers.push_back(manute_bol);
     centers.push_back(rudy_gobert);
-    centers.push_back(pau_gasol);
+    
     centers.push_back(joakim_noah);
     centers.push_back(karl_anthony_towns);
     centers.push_back(bam_adebayo);
