@@ -11,7 +11,7 @@ void print_instructions(){
     cout << endl;
     cout << "/////////////////////////////////////////////////////" << endl;
     cout << "Your goal is to create the best team possible" << 
-    " and beat the randomized computer team." << endl;
+    " and beat the computer team." << endl;
     cout << "When you are asked to choose a player, " << 
     "please type in the number next to their name." << endl;
     cout << "The number next to the player's name is also their value. Each player has a value worth 1-5." << endl;
@@ -133,7 +133,7 @@ PointGuard generate_point_guard_5(){
     PointGuard jerry_west("Jerry West", 99, "LAL", 5, "point guard");
     PointGuard oscar_robertson("Oscar Robertson", 99, "MIL", 5, "point guard");
     PointGuard isaiah_thomas("Isaiah Thomas(older one)", 99, "DET", 5, "point guard");
-    PointGuard kyrie_irving("Kyrie Irving", 31, "DAL", 4, "point guard");
+    PointGuard kyrie_irving("Kyrie Irving", 31, "DAL", 5, "point guard");
     PointGuard allen_iverson("Allen Iverson", 99, "PHI", 5, "point guard");
     
 
@@ -153,20 +153,21 @@ PointGuard generate_point_guard_5(){
 
 PointGuard generate_point_guard_4(){
     PointGuard russell_westbrook("Russell Westbrook", 34, "LAC", 4, "point guard");
-    PointGuard chris_paul("Chris Paul", 38, "PHX", 5, "point guard");
+    PointGuard chris_paul("Chris Paul", 38, "PHX", 4, "point guard");
     PointGuard john_stockton("John Stockton", 99, "UTA", 4, "point guard");
     PointGuard steve_nash("Steve Nash", 99, "PHX", 4, "point guard");
     PointGuard rajon_rondo("Rajon Rondo", 99, "BOS", 4, "point guard");
     PointGuard jason_kidd("Jason Kidd", 99, "DAL", 4, "point guard");
     PointGuard damian_lillard("Damian Lillard", 32, "POR", 4, "point guard");
     PointGuard gary_payton("Gary Payton", 99, "PKC", 4, "point guard");
-    PointGuard bob_cousy("Bob Cousy", 99, "BOS", 5, "point guard");
+    PointGuard bob_cousy("Bob Cousy", 99, "BOS", 4, "point guard");
+    PointGuard shai_ga("Shai Gilgeous-Alexander", 99, "OKC", 4, "point guard");
+
     
 
     vector<PointGuard> point_guards;
     point_guards.push_back(russell_westbrook);
     point_guards.push_back(chris_paul);
-    
     point_guards.push_back(john_stockton);
     point_guards.push_back(steve_nash);
     point_guards.push_back(rajon_rondo);
@@ -174,6 +175,8 @@ PointGuard generate_point_guard_4(){
     point_guards.push_back(damian_lillard);
     point_guards.push_back(gary_payton);
     point_guards.push_back(bob_cousy);
+    point_guards.push_back(shai_ga);
+
     
    return point_guards.at(size_t(random_number_generator(int(point_guards.size()))));
 }
@@ -186,7 +189,8 @@ PointGuard generate_point_guard_3(){
     PointGuard deron_williams("Deron Williams", 99, "BKN", 3, "point guard");
     PointGuard ja_morant("Ja Morant", 23, "MEM", 3, "point guard");
     PointGuard steve_francis("Steve Francis", 99, "HOU", 3, "point guard");
-    PointGuard shai_ga("Shai Gilgeous-Alexander", 99, "OKC", 3, "point guard");
+    PointGuard jalen_brunson("Jalen Brunson", 26, "NYK", 3, "point guard");
+
 
     vector<PointGuard> point_guards;
     point_guards.push_back(jamal_murray);
@@ -196,7 +200,8 @@ PointGuard generate_point_guard_3(){
     point_guards.push_back(deron_williams);
     point_guards.push_back(ja_morant);
     point_guards.push_back(steve_francis);
-    point_guards.push_back(shai_ga);
+    point_guards.push_back(jalen_brunson);
+
     
     return point_guards.at(size_t(random_number_generator(int(point_guards.size()))));
 }
@@ -206,7 +211,6 @@ PointGuard generate_point_guard_2(){
     PointGuard fred_vanvleet("Fred VanVleet", 29, "TOR", 2, "point guard");
     PointGuard spencer_dinwiddie("Spencer Dinwiddie", 30, "BKN", 2, "point guard");
     PointGuard john_wall("John Wall", 32, "LAC", 2, "point guard");
-    PointGuard jalen_brunson("Jalen Brunson", 26, "NYK", 2, "point guard");
     PointGuard lamelo_ball("LaMelo Ball", 21, "CHA", 2, "point guard");
     PointGuard kemba_walker("Kemba Walker", 33, "CHA", 2, "point guard");
     PointGuard kyle_lowry("Kyle Lowry", 37, "MIA", 2, "point guard");
@@ -218,7 +222,6 @@ PointGuard generate_point_guard_2(){
     point_guards.push_back(fred_vanvleet);
     point_guards.push_back(spencer_dinwiddie);
     point_guards.push_back(john_wall);
-    point_guards.push_back(jalen_brunson);
     point_guards.push_back(lamelo_ball);
     point_guards.push_back(kemba_walker);
     point_guards.push_back(kyle_lowry);
@@ -295,7 +298,6 @@ ShootingGuard generate_shooting_guard_4(){
 ShootingGuard generate_shooting_guard_3(){
     ShootingGuard kyle_korver("Kyle Korver", 99, "ATL", 3, "shooting guard");
     ShootingGuard bradley_beal("Bradley Beal", 29, "WAS", 3, "shooting guard");
-    ShootingGuard zach_lavine("Zach LaVine", 28, "CHI", 3, "shooting guard");
     ShootingGuard jason_terry("Jason Terry", 99, "DAL", 3, "shooting guard");
     ShootingGuard jj_redick("J.J. Reddick", 99, "ORL", 3, "shooting guard");
     ShootingGuard donovan_mitchell("Donovan Mitchell", 26, "CLE", 3, "shooting guard");
@@ -305,7 +307,6 @@ ShootingGuard generate_shooting_guard_3(){
     vector<ShootingGuard> shooting_guards;
     shooting_guards.push_back(kyle_korver);
     shooting_guards.push_back(bradley_beal);
-    shooting_guards.push_back(zach_lavine);
     shooting_guards.push_back(jason_terry);
     shooting_guards.push_back(jj_redick);
     shooting_guards.push_back(donovan_mitchell);
@@ -325,6 +326,8 @@ ShootingGuard generate_shooting_guard_2(){
     ShootingGuard desmond_bane("Desmond Bane", 24, "MEM", 2, "shooting guard");
     ShootingGuard tyrese_maxey("Tyrese Maxey", 22, "PHI", 2, "shooting guard");
     ShootingGuard jalen_green("Jalen Green", 21, "HOU", 2, "shooting guard");
+    ShootingGuard zach_lavine("Zach LaVine", 28, "CHI", 2, "shooting guard");
+
 
     vector<ShootingGuard> shooting_guards;
     shooting_guards.push_back(cj_mccollum);
@@ -334,6 +337,8 @@ ShootingGuard generate_shooting_guard_2(){
     shooting_guards.push_back(desmond_bane);
     shooting_guards.push_back(tyrese_maxey);
     shooting_guards.push_back(jalen_green);
+    shooting_guards.push_back(zach_lavine);
+
 
     return shooting_guards.at(size_t(random_number_generator(int(shooting_guards.size()))));
 
@@ -592,7 +597,7 @@ Center generate_center_5(){
     Center moses_malone("Moses Malone", 99, "HOU", 5, "center");
     Center david_robinson("David Robinson", 99, "SAS", 5, "center");
     Center yao_ming("Yao Ming", 99, "HOU", 5, "center");
-    Center nikola_jokic("Nikola Jokic", 28, "DEN", 4, "center");
+    Center nikola_jokic("Nikola Jokic", 28, "DEN", 5, "center");
 
 
     vector<Center> centers;
@@ -617,7 +622,7 @@ Center generate_center_4(){
     Center alonzo_mourning("Alonzo Mourning", 99, "MIA", 4, "center");
     Center dikembe_mutumbo("Dikembe Mutumbo", 99, "ATL", 4, "center");
     Center anthony_davis("Anthony Davis", 30, "LAL", 4, "center");
-    Center pau_gasol("Pau Gasol", 99, "LAL", 3, "center");
+    Center pau_gasol("Pau Gasol", 99, "LAL", 4, "center");
 
     vector<Center> centers;
     centers.push_back(patrick_ewing);
@@ -644,7 +649,6 @@ Center generate_center_3(){
     centers.push_back(dwight_howard);
     centers.push_back(manute_bol);
     centers.push_back(rudy_gobert);
-    
     centers.push_back(joakim_noah);
     centers.push_back(karl_anthony_towns);
     centers.push_back(bam_adebayo);
@@ -662,6 +666,8 @@ Center generate_center_2(){
     Center nikola_vucevic("Nikola Vucevic", 32, "CHI", 2, "center");
     Center al_horford("Al Horford", 36, "BOS", 2, "center");
     Center jonas_valanciunas("Jonas Valanciunas", 31, "BOS", 2, "center");
+    Center chet_holmgren("Chet Holmgren", 22, "OKC", 2, "center");
+
 
     vector<Center> centers;
     centers.push_back(deandre_jordan);
@@ -672,6 +678,7 @@ Center generate_center_2(){
     centers.push_back(nikola_vucevic);
     centers.push_back(al_horford);
     centers.push_back(jonas_valanciunas);
+    centers.push_back(chet_holmgren);
 
     return centers.at(size_t(random_number_generator(int(centers.size()))));
 }
